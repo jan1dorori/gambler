@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/common.css">
+    <title>active 바</title>
+</head>
+<body>
+    <div class="container">
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">메뉴_하나</li>
+            <li class="tab-link" data-tab="tab-2">메뉴_둘</li>
+            <li class="tab-link" data-tab="tab-3">메뉴_셋</li>
+        </ul>
+        <div id="tab-1" class="tab-content current">1</div>
+        <div id="tab-2" class="tab-content">2</div>
+        <div id="tab-3" class="tab-content">3</div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $('ul.tabs li').click(function(){
+          var tab_id = $(this).attr('data-tab');
+
+          $('ul.tabs li').removeClass('current');
+          $('.tab-content').removeClass('current');
+
+          $(this).addClass('current');
+          $("#"+tab_id).addClass('current');
+        })
+      })
+    </script>
+</body>
+</html>
